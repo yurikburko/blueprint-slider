@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { MultiSlider } from "./slider/components";
+import { Intent } from "./slider/common";
 
 class App extends Component {
   render() {
@@ -20,6 +22,13 @@ class App extends Component {
             Learn React
           </a>
         </header>
+
+        {/*RangeSlider looks roughly like this:*/}
+        <MultiSlider>
+            <MultiSlider.Handle value={5} type="start" intentAfter={Intent.PRIMARY} />
+            <MultiSlider.Handle value={80} type="end" />
+        </MultiSlider>
+
       </div>
     );
   }
