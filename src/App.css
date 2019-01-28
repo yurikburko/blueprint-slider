@@ -30,3 +30,9 @@
     transform: rotate(360deg);
   }
 }
+
+.slider-wrapper {
+  width: 550px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}

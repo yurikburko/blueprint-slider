@@ -42,6 +42,23 @@ export interface IIntentProps {
     intent?: Intent;
 }
 
+/**
+ * Interface for a clickable action, such as a button or menu item.
+ * These props can be spready directly to a `<Button>` or `<MenuItem>` element.
+ */
+export interface IActionProps extends IIntentProps, IProps {
+    /** Whether this action is non-interactive. */
+    disabled?: boolean;
+
+    /** Name of a Blueprint UI icon (or an icon element) to render before the text. */
+    icon?: MaybeElement;
+
+    /** Click event handler. */
+    onClick?: (event: React.MouseEvent<HTMLElement>) => void;
+
+    /** Action text. Can be any single React renderable. */
+    text?: React.ReactNode;
+}
 
 /** Interface for a link, with support for customizing target window. */
 export interface ILinkProps {

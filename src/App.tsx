@@ -10,9 +10,17 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
+
+          <div className="slider-wrapper">
+              {/*RangeSlider looks roughly like this:*/}
+              <MultiSlider>
+                  <MultiSlider.Handle value={2} type="start" intentAfter={Intent.PRIMARY} />
+                  <MultiSlider.Handle value={5} type="end" />
+                  <MultiSlider.Handle value={6} type="start" intentAfter={Intent.WARNING} />
+                  <MultiSlider.Handle value={8} type="end" />
+              </MultiSlider>
+          </div>
+
           <a
             className="App-link"
             href="https://reactjs.org"
@@ -22,13 +30,6 @@ class App extends Component {
             Learn React
           </a>
         </header>
-
-        {/*RangeSlider looks roughly like this:*/}
-        <MultiSlider>
-            <MultiSlider.Handle value={5} type="start" intentAfter={Intent.PRIMARY} />
-            <MultiSlider.Handle value={80} type="end" />
-        </MultiSlider>
-
       </div>
     );
   }
