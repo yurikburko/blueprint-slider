@@ -88,6 +88,8 @@ export interface ISliderBaseProps extends IProps {
      * @default false
      */
     vertical?: boolean;
+
+    renderAxisLabels?: boolean;
 }
 
 export interface IMultiSliderProps extends ISliderBaseProps {
@@ -118,6 +120,7 @@ export class MultiSlider extends AbstractPureComponent<IMultiSliderProps, ISlide
         showTrackFill: true,
         stepSize: 1,
         vertical: false,
+        renderAxisLabels: true,
     };
 
     public static defaultProps: IMultiSliderProps = {
@@ -215,7 +218,7 @@ export class MultiSlider extends AbstractPureComponent<IMultiSliderProps, ISlide
     }
 
     private renderLabels() {
-        if (this.props.labelRenderer === false) {
+        if (this.props.labelRenderer === false || this.props.renderAxisLabels === false) {
             return null;
         }
         const { labelStepSize, max, min } = this.props;

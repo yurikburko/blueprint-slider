@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { MultiSlider } from "./slider/components";
-import { Intent } from "./slider/common";
+import {RLSlider} from "./RLSlider";
 
 class App extends Component {
   render() {
@@ -12,13 +11,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
 
           <div className="slider-wrapper">
-              {/*RangeSlider looks roughly like this:*/}
-              <MultiSlider>
-                  <MultiSlider.Handle value={2} type="start" intentAfter={Intent.PRIMARY} />
-                  <MultiSlider.Handle value={5} type="end" />
-                  <MultiSlider.Handle value={6} type="start" intentAfter={Intent.WARNING} />
-                  <MultiSlider.Handle value={8} type="end" />
-              </MultiSlider>
+              <RLSlider />
           </div>
 
           <a
